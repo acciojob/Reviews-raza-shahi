@@ -64,7 +64,7 @@ const Review = () => {
         {name}
       </h2>
       <p className="job">{job}</p>
-      <p>{text}</p>
+      <p className="info">{text}</p>
       <div className="btn-container">
         <button className="prev-btn" onClick={prevReview}>
           Prev
