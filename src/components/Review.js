@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React, { useState } from "react";
 
 const Review = () => {
   const reviewData = [
@@ -35,36 +35,47 @@ const Review = () => {
       text: "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
     },
   ];
-  const [index,setIndex] = useState(0);
-  const {id,name,job,image,text} = reviewData[index];
-  const checkNumber=(number)=>{
-    if(number>reviewData.length-1) return 0;
-    if(number<0) return reviewData.length -1;
+  const [index, setIndex] = useState(0);
+  const { id, name, job, image, text } = reviewData[index];
+  const checkNumber = (number) => {
+    if (number > reviewData.length - 1) return 0;
+    if (number < 0) return reviewData.length - 1;
     return number;
-  }
-  const prevReview=()=>{
-    setIndex(checkNumber(index-1));
-  }
-  const nextReview=()=>{
-    setIndex(checkNumber(index+1))
-  }
+  };
+  const prevReview = () => {
+    setIndex(checkNumber(index - 1));
+  };
+  const nextReview = () => {
+    setIndex(checkNumber(index + 1));
+  };
+  const randomReview = () => {
+    let randomNumber = Math.floor(Math.random() * reviewData.length);
+    if (randomNumber === index) {
+      randomNumber = index + 1;
+    }
+    setIndex(checkNumber(randomNumber));
+  };
   return (
-    <div className='review'>
-      <div className='img-container'>
-        <img src={image} alt={name} className='person-img'/>
+    <div className="review">
+      <div className="img-container">
+        <img src={image} alt={name} className="person-img" />
       </div>
-      <h2 className='author' id={`author-${id}`}>{name}</h2>
-      <p>{job}</p>
+      <h2 className="author" id={`author-${id}`}>
+        {name}
+      </h2>
+      <p className="job">{job}</p>
       <p>{text}</p>
-      <div className='btn-container'>
-        <button className='prev-btn' onClick={prevReview}>Prev</button>
-        <button className='next-btn' onClick={nextReview}>Next</button>
+      <div className="btn-container">
+        <button className="prev-btn" onClick={prevReview}>
+          Prev
+        </button>
+        <button className="next-btn" onClick={nextReview}>
+          Next
+        </button>
       </div>
-      <button className='random-btn'>
-        surprise me
-      </button>
+      <button onClick={randomReview} className="random-btn">surprise me</button>
     </div>
-  )
-}
+  );
+};
 
-export default Review
+export default Review;
