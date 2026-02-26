@@ -53,7 +53,7 @@ const Review = () => {
       <div className='img-container'>
         <img src={image} alt={name} className='person-img'/>
       </div>
-      <h2 className='auther' id={id}>{name}</h2>
+      <h2 className='author' id={`author-${id}`}>{name}</h2>
       <p>{job}</p>
       <p>{text}</p>
       <div className='btn-container'>
