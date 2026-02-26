@@ -1,12 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {}
+
 h1 {
     color: #27aedb;
     text-align: center;
-    }
-    
+}
 
-button{
+
+button {
     color: #27aedb;
     text-align: center;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+}
+
+.review {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.img-container {
+    width: 300px;
+}
+
+.img-container img {
+    width: 100%;
+}
+.btn-container {
+    width: 200px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
 }
